@@ -63,7 +63,7 @@ export default class Home extends React.Component {
                             {
                                 articles.map((item, key) => {
                                     return (
-                                        <div key={key} className="col-md-3 col-sm-12 products">
+                                        <div key={key} className="col-xl-3 col-md-10 col-sm-12 products">
                                             <img className="com-img" src={item.img} />
                                             <h2>{item.description}</h2>
                                             <Button>Läs mer (fejklänk)</Button>

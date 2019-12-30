@@ -243,3 +243,69 @@ nav a {
 .sell {
   width: 20%;
 }
+
+
+/* ********************RESPONSIVE CSS********************* */
+
+/* mainframe */
+
+
+/* menu */ 
+
+/* TODO: fixed bottom menu */
+
+
+@media screen and (max-width: 767px) {
+  .main-article {
+    margin-left: 1em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main-article {
+    /* background-color: green; */
+    margin-left: 1em;
+    margin-top: 5em;
+  }
+  .intro {
+    margin-top: 14vh;
+  }
+  .side-bar-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    /* top: 80vh; */
+    overflow: hidden;
+    width: 100%;
+    /* margin-top: 5em; */
+    height: fit-content;
+    margin-bottom: 3em;
+
+  }
+  .centered-label {
+    display: inline;
+    align-items: center;
+    /* margin-bottom: 0.5em; */
+    background-color: rgb(48, 45, 45);
+    padding: 0.3em;
+    box-shadow: 0 0 0 0;
+  }
+  .side-bar-nav nav {
+    /* height: 5em; */
+    width: 100%;
+    text-align: left;
+    margin-top: 0;
+  }
+  .logotyp {
+    display: none;
+  }
+  .header {
+    height: 0;
+  }
+  .intro {
+    margin-left: 0;
+  }
+
+}
+
+

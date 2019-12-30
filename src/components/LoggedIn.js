@@ -12,7 +12,7 @@ export default class LoggedIn extends Component {
         }
     }
 
-    UNSAFE_componentWillMount = () => {
+    componentDidMount = () => {
         setTimeout(() => {
             this.setState({
                 redirect: true

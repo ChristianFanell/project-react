@@ -1,10 +1,10 @@
 import React, { Component } from "react"
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 import SideBar from './SideBar.js';
 // import PropTypes from 'prop-types';
 import Utils from '../utils/utils.js';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 
 export default class Mystuff extends Component {
     constructor(props) {
@@ -96,9 +96,7 @@ export default class Mystuff extends Component {
 
         if (diff < 0) optimistic = 'error';
 
-        console.log(JSON.parse(sessionStorage.getItem('meSession')))
         return (
-
             this.state.loggedIn ?
                 <div>
                     <SideBar />
