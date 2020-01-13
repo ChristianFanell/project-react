@@ -167,7 +167,7 @@ export default class Diagram extends Component {
 
                     {
                         !this.state.loading ?
-                            <div className="col-md-6 col-sm-10">
+                            <div className="col-md-8 col-sm-10">
                                 <h1>Market</h1>
                                 <div className="">
                                     {
