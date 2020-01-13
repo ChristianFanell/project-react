@@ -244,6 +244,9 @@ nav a {
   width: 20%;
 }
 
+body {
+  overflow-x: hidden;
+}
 
 /* ********************RESPONSIVE CSS********************* */
 
