@@ -35,26 +35,28 @@ export default class Mystuff extends Component {
         let user = JSON.parse(sessionStorage.getItem('email'));
         let sessionString = JSON.parse(sessionStorage.getItem('meSession'));
 
-        fetch(`${Utils.API_ADRESS}/trade/${action}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-access-token': sessionString
-            },
-            body: JSON.stringify({
-                id: user,
+        if (sessionString) {
+            fetch(`${Utils.API_ADRESS}/trade/${action}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-access-token': sessionString
+                },
+                body: JSON.stringify({
+                    id: user,
+                })
             })
-        })
-            .then(res => res.json())
-            .then(res => {
-                if (action === 'buyhistory') {
-                    this.printBuy(res)
-                }
-                if (action === 'sellhistory') {
-                    this.printSell(res)
-                }
-
-            })
+                .then(res => res.json())
+                .then(res => {
+                    if (action === 'buyhistory') {
+                        this.printBuy(res)
+                    }
+                    if (action === 'sellhistory') {
+                        this.printSell(res)
+                    }    
+                });
+        }
+        
     }
 
 
@@ -76,6 +78,7 @@ export default class Mystuff extends Component {
 
         let buySum = 0;
         let soldSum = 0;
+        let sessionString = JSON.parse(sessionStorage.getItem('meSession'));
 
         if (this.state.buyData.length > 0) {
             buySum = this.state.buyData.map((item, i) => item.p_price)
@@ -97,7 +100,7 @@ export default class Mystuff extends Component {
         if (diff < 0) optimistic = 'error';
 
         return (
-            this.state.loggedIn ?
+            sessionString ?
                 <div>
                     <SideBar />
                     <div className="main-article">

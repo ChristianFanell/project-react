@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import io from 'socket.io-client';
 import { Line } from 'react-chartjs-2';
 import SideBar from './SideBar.js';
-// import BuyMetal from './BuyMetal.js';
+import { Redirect } from 'react-router-dom';
 
 import Spinner from 'react-bootstrap/Spinner';
 import Button from 'react-bootstrap/Button';
@@ -157,11 +157,12 @@ export default class Diagram extends Component {
             }
         ];
 
-
+        let sessionString = JSON.parse(sessionStorage.getItem('meSession'));
 
         return (
+            sessionString ?
             <div>
-                <SideBar loggedIn={true} />
+                <SideBar/>
                 <div className="main-article">
 
                     {
@@ -222,6 +223,7 @@ export default class Diagram extends Component {
                     }
                 </div>
             </div>
+            : <Redirect to="/login" />
         )
     }
 }
