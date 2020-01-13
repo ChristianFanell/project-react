@@ -79,11 +79,7 @@ export default class SideBar extends Component {
                                     <IoMdPerson size={32} />
                                 </div>
                             </NavLink>
-
-
-
                     }
-
                 </nav>
             </div>
         )

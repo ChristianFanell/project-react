@@ -130,8 +130,6 @@ export default class SellMetal extends Component {
     };
 
     render() {
-
-        // flytta upp det här skiten till metoder istället och sätt totalpriset till state. sedan submit, sedan är denna uppgift klar. fixa!!
         let amount = [];
         let grams = [];
         let canSell = false;
