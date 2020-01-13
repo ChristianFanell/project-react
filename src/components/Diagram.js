@@ -70,14 +70,16 @@ export default class Diagram extends Component {
     }
 
     getDateAndTime = () => {
-        let currentDate = new Date();
-        let month = currentDate.getMonth() + 1 < 10 ? '0' + currentDate.getMonth() + 1 : currentDate.getMonth() + 1
-        let day = currentDate.getDate() < 10 ? '0' + currentDate.getDate() : currentDate.getDate()
-        let year = currentDate.getFullYear().toString().slice(2)
-        let hour = currentDate.getHours() < 10 ? '0' + currentDate.getHours() : currentDate.getHours()
-        let minutes = currentDate.getMinutes() < 10 ? '0' + currentDate.getMinutes() : currentDate.getMinutes();
-        console.log(currentDate.getDate())
-        return `${year}-${month}-${day} ${hour}:${minutes}`
+
+   
+        let now = new Date();
+        let hour = now.getHours() < 10 ? '0' + now.getHours() : now.getHours();
+        let minutes = now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes();
+        let year = now.getFullYear().toString().slice(2);
+        let month = `${now.getMonth() + 1}`.padStart(2, 0);
+        let day = `${now.getDate()}`.padStart(2, 0);
+
+        return `${year}-${month}-${day} ${hour}:${minutes}`;
     }
 
     componentDidMount = () => {
@@ -164,7 +166,7 @@ export default class Diagram extends Component {
 
                     {
                         !this.state.loading ?
-                            <div className="col-md-6">
+                            <div className="col-md-6 col-sm-10">
                                 <h1>Market</h1>
                                 <div className="">
                                     {

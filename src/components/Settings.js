@@ -18,7 +18,7 @@ export default class Settings extends Component {
 
     }
 
-    componentDidMount = () => {
+    componentWillMount = () => {
         if (sessionStorage.getItem('meSession') !== null) {
             this.setState({
                 loggedIn: true

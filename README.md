@@ -12,57 +12,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Redovisning
 
-### `npm run build`
+Detta är en redovisningstext för kursen jsramverk, Blekinge tekniska högskola. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Jag valde React igen som ramverk och körde samma login-funktionalitet som i de tidigare kursmomenten, dvs. med session storage. Det hade kanske varit intressant att köra på Vue och en mer säker autensiering (med cookies istället), men i och med att jag lämnar in det här projektet senare ville jag speeda på processen. Appen är en plattform för att köpa och sälja guld, silver och koppar. Detta kan man enbart göra som inloggad. 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+För att hämta in data från mitt API använder jag mig av den inbyggda funktionen fetch() som jag tycker är smidig och enkelt. För att skriva ut diagrammet använder jag chart.js där det fanns många exempel på nätet varpå implementeringen gick ganska fort och med egna justeringar såklart. I diagramkomponenten kommunicerar socket.io-client med min socket-server som uppdateras var femte sekund. Priserna pushar jag in i arrayer och där varje element är en tidpunkt i diagrammet. Jag har begränsat arrayernas längd till 25 för att få det läsbart. Klickar man på t ex "Köp guld" eller "Sälj" hänger priserna med in i köp/säljkomponenten där de fryser. Sedan är det bara att köpa guld, silver eller koppar efter sina resurser. Socket.io-client använde jag till chatten och jag såg ingen anledning till att kolla upp något nytt.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Det går att se tidigare köp och försäljningar (också till enhetspris) på en egen sida och jag har också summerat den totala skillnaden mellan köp och sälj. Jag har använt mig av Bootstrap i det här projektet. Det förenklade mycket vad gäller t ex tabeller, responsitivitet och knappar.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Nästa gång jag gör en React-app kommer jag att använda mig av hooks istället. Redux hade varit trevligt för att kunna sätta state för t ex användarnamn och inloggning. 
